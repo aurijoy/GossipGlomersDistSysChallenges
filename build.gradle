@@ -5,12 +5,14 @@ plugins {
     id 'maven-publish'
 }
 
-group 'io.github.lant.maelstrom-java'
-version '1.0'
+// Removing these as project direction is different and using wrapper to build up.
+/*group 'io.github.lant.maelstrom-java'
+version '1.0'*/
 
-repositories {
+// No Artifacting to MavenCentral since shooting off from wrapper to actual solving the problems
+/*repositories {
     mavenCentral()
-}
+}*/
 
 dependencies {
     implementation 'com.fasterxml.jackson.core:jackson-databind:2.14.2'
@@ -42,10 +44,14 @@ javadoc {
 }
 
 java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
     withJavadocJar()
     withSourcesJar()
 }
 
+/*
 publishing {
     publications {
         mavenJava(MavenPublication) {
@@ -98,7 +104,9 @@ publishing {
         }
     }
 }
-
+*/
+/*
 signing {
     sign publishing.publications.mavenJava
 }
+*/
