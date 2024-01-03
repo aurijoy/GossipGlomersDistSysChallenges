@@ -2,7 +2,7 @@ plugins {
     id 'java-library'
     id 'jacoco'
     id 'signing'
-    id 'maven-publish'
+    //  id 'maven-publish'
 }
 
 // Removing these as project direction is different and using wrapper to build up.
